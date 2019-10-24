@@ -1,0 +1,14 @@
+cas:
+  authn:
+    jdbc:
+      query:
+        -
+          # https://apereo.github.io/cas/6.0.x/configuration/Configuration-Properties.html#query-database-authentication
+          # https://jdbc.postgresql.org/documentation/head/connect.html
+          url: jdbc:postgresql://localhost:5432/cas_db?currentSchema=cas
+          user: cas_db_user
+          password: cas_db_password
+          sql: 'select password from app_user where username= ?'
+          fieldPassword: password
+          driverClass: org.postgresql.Driver
+          dialect: org.hibernate.dialect.PostgreSQL95Dialect
