@@ -1,6 +1,8 @@
 buildscript {
     repositories {
         mavenLocal()
+        maven { url "http://localhost:8081/repository/maven-public/" }
+        maven { url "http://host.docker.internal:8081/repository/maven-public/" }
         mavenCentral()
         jcenter()
         maven { url "https://repo.spring.io/libs-milestone" }
@@ -17,6 +19,8 @@ buildscript {
 
 repositories {
     mavenLocal()
+    maven { url "http://localhost:8081/repository/maven-public/" }
+    maven { url "http://host.docker.internal:8081/repository/maven-public/" }
     mavenCentral()
     jcenter()
     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
